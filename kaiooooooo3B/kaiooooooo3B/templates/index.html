@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <style>
+        body {
+            background-color: #f4f4f9; /* Cor de fundo clara */
+            font-family: Arial, sans-serif;
+            color: #333333; /* Cor do texto */
+        }
+        
+        h1 {
+            color: #4CAF50; /* Cor do título principal */
+        }
+
+        h2 {
+            color: #333333; /* Cor do título de comentários */
+        }
+
+        form {
+            background-color: #ffffff; /* Cor de fundo do formulário */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50; /* Cor do botão */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Efeito ao passar o mouse */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        strong {
+            color: #4CAF50; /* Cor do nome nos comentários */
+        }
+    </style>
+</head>
+<body>
+    <h1>Deixe seu Comentário</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required>
+        <textarea name="comment" placeholder="Seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <h2>Comentários</h2>
+    <ul>
+        {% for name, comment in comments %}
+            <li><strong>{{ name }}</strong>: {{ comment }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
