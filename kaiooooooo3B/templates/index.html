@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+</head>
+<body>
+    <h1>Deixe seu Comentário</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required>
+        <textarea name="comment" placeholder="Seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <h2>Comentários</h2>
+    <ul>
+        {% for name, comment in comments %}
+            <li><strong>{{ name }}</strong>: {{ comment }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
